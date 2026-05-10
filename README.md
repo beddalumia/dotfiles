@@ -70,7 +70,13 @@ If some of the files exist already git will complain (bare repos are more annoyi
 You can force the bootstrap while backing up them safely by running:
 
 ```sh
-mkdir -p .dotfiles-backup && dots checkout workstation-wien 2>&1 | grep -E "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles-backup/{}
+dots diff --name-only ..<branch> | while read -r file; do
+    if [ -f "$file" ]; then
+        mkdir -p ".dotfiles-backup/$(dirname "$file")"
+        mv "$file" ".dotfiles-backup/$file"
+        echo "Moved: $file"
+    fi
+done
 ```
 
 We'd love to alias this, but before the bootstrapping you won't have it available anyway. At some point I
