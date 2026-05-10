@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -euo pipefail
+
+BW_SESSION=$(bw unlock --raw)
+export BW_SESSION
+
+# Fetch credentials
+VPN_PASS=$(bw get password "TUnet" --session "$BW_SESSION")
+VPN_TOTP=$(bw get totp "TUnet" --session "$BW_SESSION")
+
+# Run OpenConnect
+printf "%s\n%s" "$VPN_PASS" "$VPN_TOTP" | sudo openconnect --config ~/.config/openconnect/tunet.config
