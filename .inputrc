@@ -1,0 +1,7 @@
+# Case-insensitive completion
+set completion-ignore-case on
+
+# Use Up and Down arrows to search through history 
+# based on what is already typed on the line
+"\e[A": history-search-backward
+"\e[B": history-search-forward

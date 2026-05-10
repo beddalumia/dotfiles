@@ -1,0 +1,26 @@
+# Set Nano as the primary editor for everything
+export EDITOR="nano"
+export VISUAL="nano"
+
+# Force Git to use Nano specifically (extra insurance)
+export GIT_EDITOR="nano"
+
+# Rust/Cargo binaries into the path (only if the directory exists)
+if [ -d "$HOME/.cargo/bin" ]; then
+    export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+# Custom stuff into the path (check each individually for cleanliness)
+[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
+[ -d "$HOME/.bin" ] && export PATH="$HOME/.bin:$PATH"
+
+# Module Environment (LMOD)
+# Check if the init script exists before sourcing it
+if [ -f "/usr/share/lmod/lmod/init/bash" ]; then
+    source /usr/share/lmod/lmod/init/bash
+    
+    # Only try to use the module directory if it exists
+    if [ -d "$HOME/.modules.d" ]; then
+        module use "$HOME/.modules.d"
+    fi
+fi
