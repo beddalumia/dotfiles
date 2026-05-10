@@ -1,0 +1,14 @@
+{
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "C",
+    ): Copy,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "V",
+    ): Paste,
+}
