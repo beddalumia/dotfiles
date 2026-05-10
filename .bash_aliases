@@ -9,6 +9,7 @@ if command -v cbonsai >/dev/null 2>&1; then alias clc="cbonsai -p"; fi
 
 # COSMIC-specific scan for new config files
 if [ -d "$HOME/.config/cosmic" ]; then
+   alias cosmic-track="dots add --intent-to-add ~/.config/cosmic/"
    alias cosmic-scan="dots ls-files --others --exclude-standard -- .config/cosmic/"
 fi
 

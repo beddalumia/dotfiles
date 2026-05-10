@@ -38,8 +38,10 @@ dots add --intent-to-add ~/.config/cosmic/
 
 which "pre-stages" all COSMIC config files, even if the repository defaults to not show any
 untracked file. This option is inherently local, so don't forget to run this command after a
-fresh install of the COSMIC dotfiles. If you want to be supersure to see new files, after a
-GUI tweaking session, just run:
+fresh install of the COSMIC dotfiles. For convenience, we added the `cosmic-track` command
+to `.bash_aliases`, for a quicker typing (and easier pull from memory, without reading here).
+
+If you want to inspect newly created config files, after a GUI tweaking session, just run:
 
 ```sh
 dots ls-files --others --exclude-standard -- .config/cosmic/
