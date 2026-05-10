@@ -53,3 +53,13 @@ To streamline the procedure we define a `cosmic-scan` alias (in `.bash_aliases`)
 can just run `dots status` to check for any change on already tracked COSMIC config files AND
 run `cosmic-scan` to check for possible new COSMIC config files. These two commands need to be
 invoked after any tweaking on the COSMIC Settings GUI (if one wants it to be permanent).  
+
+> [!IMPORTANT]
+> We are tracking some custom-applet settings, for the appearance of the Cosmic Panel (and dock). 
+> To actually see these elements shown in your COSMIC, you need to install these applets, as we
+> cannot track binary files in any meaningful way. They are flatpaks. You can either search for
+> them on the COSMIC Store, or use directly the flatpak command. The two relevant applets are
+> [Logo Menu](https://github.com/cosmic-utils/cosmic-ext-applet-logomenu) and
+> [Minimon](https://github.com/cosmic-utils/minimon-applet).
+> Failing to install these flatpaks will _not_ break the COSMIC Panel, but the additional icons
+> will not show, of course.
