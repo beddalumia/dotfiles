@@ -6,6 +6,11 @@ if command -v batcat >/dev/null 2>&1; then alias bat="batcat"; fi
 if command -v fdfind >/dev/null 2>&1; then alias fd="fdfind"; fi
 if command -v matlab >/dev/null 2>&1; then alias m="matlab -nodesktop"; fi
 if command -v cbonsai >/dev/null 2>&1; then alias clc="cbonsai -p"; fi
+if $(lolcat -h &> /dev/null) && $(spark &> /dev/null)
+then 
+  alias skip='echo; echo; seq 1 $(tput cols) | sort -R | spark | lolcat -a; echo; echo'
+fi
+
 
 # Login visual
 if command -v cbonsai >/dev/null 2>&1; then
