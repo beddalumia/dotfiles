@@ -3,15 +3,24 @@
         modifiers: [
             Super,
         ],
-        key: "l",
-    ): System(LockScreen),
+        key: "e",
+        description: Some("Element"),
+    ): Spawn("flatpak run org.gnome.Fractal"),
     (
         modifiers: [
             Super,
+            Shift,
         ],
-        key: "p",
-        description: Some("Posta"),
-    ): Spawn("flatpak run net.blix.BlueMail"),
+        key: "m",
+    ): Minimize,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "4",
+        description: Some("Store"),
+    ): Spawn("cosmic-store"),
     (
         modifiers: [
             Super,
@@ -23,8 +32,9 @@
             Super,
             Shift,
         ],
-        key: "m",
-    ): Minimize,
+        key: "t",
+        description: Some("Kitty"),
+    ): Spawn("kitty --start-as=fullscreen"),
     (
         modifiers: [
             Super,
@@ -36,15 +46,13 @@
         modifiers: [
             Super,
         ],
-        key: "e",
-        description: Some("Element"),
-    ): Spawn("flatpak run org.gnome.Fractal"),
+        key: "l",
+    ): System(LockScreen),
     (
         modifiers: [
             Super,
-            Shift,
         ],
-        key: "4",
-        description: Some("Store"),
-    ): Spawn("cosmic-store"),
+        key: "p",
+        description: Some("Posta"),
+    ): Spawn("flatpak run net.blix.BlueMail"),
 }
