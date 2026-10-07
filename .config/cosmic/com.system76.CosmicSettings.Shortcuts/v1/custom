@@ -2,22 +2,11 @@
     (
         modifiers: [
             Super,
+            Shift,
         ],
-        key: "l",
-    ): System(LockScreen),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "p",
-        description: Some("Posta"),
-    ): Spawn("flatpak run net.blix.BlueMail"),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "BackSpace",
-    ): Focus(Left),
+        key: "4",
+        description: Some("Store"),
+    ): Spawn("cosmic-store"),
     (
         modifiers: [
             Super,
@@ -29,6 +18,19 @@
         modifiers: [
             Super,
         ],
+        key: "e",
+        description: Some("Element"),
+    ): Spawn("flatpak run org.gnome.Fractal"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "BackSpace",
+    ): Focus(Left),
+    (
+        modifiers: [
+            Super,
+        ],
         key: "grave",
         description: Some("Telegram"),
     ): Spawn("flatpak run org.telegram.desktop"),
@@ -36,15 +38,20 @@
         modifiers: [
             Super,
         ],
-        key: "e",
-        description: Some("Element"),
-    ): Spawn("flatpak run org.gnome.Fractal"),
+        key: "c",
+        description: Some("Claude"),
+    ): Spawn("claude-desktop"),
     (
         modifiers: [
             Super,
-            Shift,
         ],
-        key: "4",
-        description: Some("Store"),
-    ): Spawn("cosmic-store"),
+        key: "l",
+    ): System(LockScreen),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "p",
+        description: Some("Posta"),
+    ): Spawn("flatpak run net.blix.BlueMail"),
 }
